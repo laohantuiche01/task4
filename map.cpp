@@ -1,14 +1,14 @@
 #include "map.h"
 #include <iostream>
 
-Node *init(char input[10], int insertNum) {
+Map_copy::Node *Map_copy::init(char input[10], int insertNum) {
     int key = Function_Mapping(input);//函数映射
     return createNode(key, insertNum);
 }
 
-Node *createNode(int key, int insertNum) //创建节点
+Map_copy::Node *Map_copy::createNode(int key, int insertNum) //创建节点
 {
-    Node *newNode = new Node;//new创建
+    Node *newNode = new Node;//new创建             ____________________________________________
     newNode->key = key;//键
     newNode->value = insertNum;//值
     newNode->left = nullptr;//左孩子
@@ -19,7 +19,7 @@ Node *createNode(int key, int insertNum) //创建节点
 }
 
 
-void leftRotate(Node *&root, Node *x) // 左旋操作
+void Map_copy::leftRotate(Node *&root, Node *x) // 左旋操作
 {
     Node *y = x->right;
     x->right = y->left;
@@ -45,7 +45,7 @@ void leftRotate(Node *&root, Node *x) // 左旋操作
 }
 
 
-void rightRotate(Node *&root, Node *x) // 右旋操作
+void Map_copy::rightRotate(Node *&root, Node *x) // 右旋操作
 {
     Node *y = x->left;
     x->left = y->right;
@@ -70,7 +70,7 @@ void rightRotate(Node *&root, Node *x) // 右旋操作
 }
 
 
-void fixInsert(Node *&root, Node *tempNode) // 插入后恢复性质
+void Map_copy::fixInsert(Node *&root, Node *tempNode) // 插入后恢复性质
 {
     while (tempNode->parent != nullptr && tempNode->parent->color == 1) // 只要插入节点的父节点存在且为红色
     {
@@ -119,14 +119,14 @@ void fixInsert(Node *&root, Node *tempNode) // 插入后恢复性质
     root->color = 0;//根节点变黑（感觉没用必要o.O）
 }
 
-int Function_Mapping(char input[10])
+int Map_copy::Function_Mapping(char input[10])
 {
     int key=input[0]+input[1];
     return key;
 }
 
 
-void insert(Node *&root, char input[10], int value) // 插入键值对到红黑树中
+void Map_copy::insert(Node *&root, char input[10], int value) // 插入键值对到红黑树中
 {
     int key= Function_Mapping(input);//转换关系
     Node *insertNode = createNode(key, value);//创建节点
@@ -165,7 +165,7 @@ void insert(Node *&root, char input[10], int value) // 插入键值对到红黑�
 }
 
 
-void inorderTraversal(Node *root) // 遍历红黑树
+void Map_copy::inorderTraversal(Node *root) // 遍历红黑树
 {
     if (root != nullptr) //没有到叶，就再调用函数
     {
@@ -176,7 +176,7 @@ void inorderTraversal(Node *root) // 遍历红黑树
 }
 
 // 搜索红黑树元素的函数(返回指针)
-Node *operator_(Node *root, int key)
+Map_copy::Node *Map_copy::operator_(Node *root, int key)
 {
     if (root == nullptr || root->key == key) //找到了KEY
     {
@@ -191,7 +191,7 @@ Node *operator_(Node *root, int key)
 }
 
 //搜索，主函数
-void search(Node *root, char input[10])
+void Map_copy::search(Node *root, char input[10])
 {
     int key = Function_Mapping(input);
     if (operator_(root, key) == NULL) //没有找到，返回了NULL
@@ -203,7 +203,7 @@ void search(Node *root, char input[10])
 }
 
 
-void transplant(Node *&root, Node *transNode, Node *helpNode)//转换
+void Map_copy::transplant(Node *&root, Node *transNode, Node *helpNode)//转换
 {
     if (transNode->parent == nullptr) // 如果是根节点，将根节点设置为helpNode
     {
@@ -223,7 +223,7 @@ void transplant(Node *&root, Node *transNode, Node *helpNode)//转换
 
 
 // 寻找最小节点
-Node *minimum(Node *node) {
+Map_copy::Node *Map_copy::minimum(Node *node) {
     while (node->left != nullptr) {
         node = node->left;
     }
@@ -231,7 +231,7 @@ Node *minimum(Node *node) {
 }
 
 // 删除红黑树中的节点
-void remove_(Node *&root, char input[10]) {
+void Map_copy::remove_(Node *&root, char input[10]) {
     int key= Function_Mapping(input);
     Node *tempRoot = root;
     while (tempRoot != nullptr && tempRoot->key != key) // 根据键值大小决定向左或向右子树查找
@@ -286,7 +286,7 @@ void remove_(Node *&root, char input[10]) {
 }
 
 // 修复删除操作后的红黑树性质
-void fixDelete(Node *&root, Node *excessiveNode) {
+void Map_copy::fixDelete(Node *&root, Node *excessiveNode) {
     while (excessiveNode != root && excessiveNode->color == 0) // 不是根节点  且   颜色为黑色时，进行循环处理
     {
         if (excessiveNode == excessiveNode->parent->left) // 若是左子节点

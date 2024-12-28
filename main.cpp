@@ -28,18 +28,6 @@ int main() {
 //    Queue1.front();
 //    Queue1.clear();
 
-//    Node* Map1;
-//    insert(Map1,"AB",5);
-//    insert(Map1,"CD",4);
-//    insert(Map1,"EF",3);
-//    insert(Map1,"GH",2);
-//    insert(Map1,"IJ",1);
-//    inorderTraversal(Map1);
-//    search(Map1,"CD");
-//    remove_(Map1,"EF");
-//    inorderTraversal(Map1);
-
-
     List_Copy list1;
     list1.insert(1);
     list1.insert(2);
@@ -49,6 +37,19 @@ int main() {
     list1.printList();
     list1.remove(1);
     list1.clear();
+
+
+
+    Map_copy A;
+    Map_copy::Node* root=NULL;
+    A.insert(root,"AB",5);
+    A.insert(root,"BC",4);
+    A.insert(root,"CD",3);
+    A.insert(root,"DE",2);
+    A.insert(root,"EF",1);
+    A.inorderTraversal(root);
+    A.remove_(root,"BC");
+    A.inorderTraversal(root);
 
 
 
