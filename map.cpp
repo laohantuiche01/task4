@@ -350,4 +350,53 @@ void Map_copy::fixDelete(Node *&root, Node *excessiveNode) {
     excessiveNode->color = 0; // 将颜色设置为黑色
 }
 
-
+//bool Map_copy::clear(Map_copy::Node *&root, const int &key)
+//{
+//        Node *cur = NULL;
+//        Node *parent = NULL;
+//        cur = root;
+//        while (cur!= NULL) {
+//            if (key < cur->key) {
+//                cur = cur->left;
+//            } else if (key > cur->key) {
+//                cur = cur->right;
+//            } else {
+//                // 处理三种情况
+//                if (cur->left == NULL && cur->right == NULL) {
+//                    // 情况 1：删除的结点没有孩子，直接删除
+//                    if (cur == root) {
+//                        root = NULL;
+//                    } else if (parent->left == cur) {
+//                        parent->left = NULL;
+//                    } else {
+//                        parent->right = NULL;
+//                    }
+//                    delete cur;
+//                    return true;
+//                } else if (cur->left == NULL || cur->right == NULL) {
+//                    // 情况 2：删除的结点有一个孩子，用孩子的数据来替换掉
+//                    Node *child = (cur->left!= NULL)? cur->left : cur->right;
+//                    if (cur == root) {
+//                        root = child;
+//                    } else if (parent->left == cur) {
+//                        parent->left = child;
+//                    } else {
+//                        parent->right = child;
+//                    }
+//                    delete cur;
+//                    return true;
+//                } else {
+//                    // 情况 3：删除的结点有两个孩子，找到后继结点进行替换
+//                    Node *successor = cur->right;
+//                    while (successor->left!= NULL) {
+//                        successor = successor->left;
+//                    }
+//                    cur->key = successor->key;
+//                    clear(root,successor->key);
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//
+//}

@@ -31,11 +31,13 @@ public:
 //删除节点
     void remove_(Node *&root, char input[10]);
 
-// 创建新节点
-    Node *createNode(int key, int value);
-//bool clear(Node *&root,const Node& key) ;
+    //清除
+    //bool clear(Node *&root, const int &key);
 
 private:
+
+    // 创建新节点
+    Node *createNode(int key, int value);
 
 //函数映射
     int Function_Mapping(char input[10]);

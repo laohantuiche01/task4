@@ -17,6 +17,8 @@ int main() {
 //    cout<<Stack1.top()<<endl;
 //    Stack1.pop();
 //
+//    cout<<endl;
+//
 //    Queue_Copy Queue1;
 //    Queue1.push(1);
 //    Queue1.push(2);
@@ -27,6 +29,8 @@ int main() {
 //    Queue1.printQueue();
 //    Queue1.front();
 //    Queue1.clear();
+//
+//    cout<<endl;
 
     List_Copy list1;
     list1.insert(1);
@@ -38,7 +42,7 @@ int main() {
     list1.remove(1);
     list1.clear();
 
-
+    cout<<endl;
 
     Map_copy A;
     Map_copy::Node* root=NULL;
@@ -50,7 +54,9 @@ int main() {
     A.inorderTraversal(root);
     A.remove_(root,"BC");
     A.inorderTraversal(root);
-
+    A.search(root,"AB");
+    A.search(root,"BC");
+    A.clear(root,131);
 
 
     return 0;
