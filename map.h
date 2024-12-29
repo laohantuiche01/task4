@@ -16,6 +16,10 @@ public:
         bool color; // 0: 黑色, 1: 红色
     };
 
+    ~Map_copy(){
+        std::cout<<"the container has been delete!\n";
+    }
+
 //创建
     Node *init(char input[10], int insertNum);
 
@@ -65,5 +69,5 @@ private:
 
 };
 
-
+void Map_clear(Map_copy::Node* temp);
 #endif //TASK4_MAP_H

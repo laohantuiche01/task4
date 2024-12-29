@@ -56,8 +56,7 @@ int main() {
     A.inorderTraversal(root);
     A.search(root,"AB");
     A.search(root,"BC");
-    //A.clear(root,131);
-
+    Map_clear(root);
 
     return 0;
 }
