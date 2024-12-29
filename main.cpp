@@ -6,31 +6,31 @@
 
 using namespace std;
 int main() {
-//    Stack_Copy Stack1;
-//    Stack1.init();
-//    Stack1.push(1);
-//    Stack1.push(2);
-//    Stack1.push(3);
-//    Stack1.push(4);
-//    Stack1.push(5);
-//    cout<<Stack1.size()<<endl;
-//    cout<<Stack1.top()<<endl;
-//    Stack1.pop();
-//
-//    cout<<endl;
-//
-//    Queue_Copy Queue1;
-//    Queue1.push(1);
-//    Queue1.push(2);
-//    Queue1.push(3);
-//    Queue1.push(4);
-//    Queue1.push(5);
-//    Queue1.size();
-//    Queue1.printQueue();
-//    Queue1.front();
-//    Queue1.clear();
-//
-//    cout<<endl;
+    Stack_Copy Stack1;
+    Stack1.init();
+    Stack1.push(1);
+    Stack1.push(2);
+    Stack1.push(3);
+    Stack1.push(4);
+    Stack1.push(5);
+    cout<<Stack1.size()<<endl;
+    cout<<Stack1.top()<<endl;
+    Stack1.pop();
+
+    cout<<endl;
+
+    Queue_Copy Queue1;
+    Queue1.push(1);
+    Queue1.push(2);
+    Queue1.push(3);
+    Queue1.push(4);
+    Queue1.push(5);
+    Queue1.size();
+    Queue1.printQueue();
+    Queue1.front();
+    Queue1.clear();
+
+    cout<<endl;
 
     List_Copy list1;
     list1.insert(1);
@@ -56,7 +56,7 @@ int main() {
     A.inorderTraversal(root);
     A.search(root,"AB");
     A.search(root,"BC");
-    A.clear(root,131);
+    //A.clear(root,131);
 
 
     return 0;
